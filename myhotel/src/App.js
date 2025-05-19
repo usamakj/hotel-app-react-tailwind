@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Layout from "./components/Layout";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
@@ -7,66 +8,45 @@ import BookNow from "./pages/BookNow";
 import ContactUs from "./pages/ContactUs";
 import "./MainSections.css";
 
-const App = () => {
+const ScrollHandler = () => {
+  const location = useLocation();
+
   useEffect(() => {
-    // Smooth scrolling function
-    const handleSmoothScroll = (e) => {
-      // Only handle clicks on anchor tags with hash
-      if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          const navbarHeight = document.querySelector('.navbar').offsetHeight;
-          const targetPosition = targetElement.offsetTop - navbarHeight;
-          
-          window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-          });
-
-          // Update URL without page reload
-          if (window.history.pushState) {
-            window.history.pushState(null, null, targetId);
-          } else {
-            window.location.hash = targetId;
-          }
-        }
-      }
-    };
-
-    // Add event listener to the document
-    document.addEventListener('click', handleSmoothScroll);
-
-    // Handle initial hash if present
-    if (window.location.hash) {
-      const targetElement = document.querySelector(window.location.hash);
+    if (location.hash) {
+      const targetElement = document.querySelector(location.hash);
       if (targetElement) {
-        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
         window.scrollTo({
           top: targetElement.offsetTop - navbarHeight,
-          behavior: 'auto'
+          behavior: 'smooth'
         });
       }
+    } else {
+      window.scrollTo(0, 0);
     }
+  }, [location]);
 
-    // Cleanup
-    return () => {
-      document.removeEventListener('click', handleSmoothScroll);
-    };
-  }, []);
+  return null;
+};
 
+const App = () => {
   return (
-    <Layout>
-      <main>
-        <section id="services" className="section-padding"><Services /></section>
-        <section id="gallery" className="section-padding"><Gallery /></section>
-        <section id="rooms" className="section-padding"><Rooms /></section>
-        <section id="bookNow" className="section-padding"><BookNow /></section>
-        <section id="contact" className="section-padding"><ContactUs /></section>
-      </main>
-    </Layout>
+    <Router>
+      <ScrollHandler />
+      <Layout>
+        <Routes>
+          <Route path="/" element={
+            <main>
+              <section id="services"><Services /></section>
+              <section id="gallery"><Gallery /></section>
+              <section id="rooms"><Rooms /></section>
+              <section id="bookNow"><BookNow /></section>
+              <section id="contact"><ContactUs /></section>
+            </main>
+          } />
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 
