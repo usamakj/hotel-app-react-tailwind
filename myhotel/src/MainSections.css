@@ -1,0 +1,462 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #222;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar a {
+  color: #fff;
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #1ee2e7;
+}
+
+/* Header Section */
+.header {
+  background: url("https://images.unsplash.com/photo-1560347876-aeef00ee58a1")
+    center/cover no-repeat;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 48px;
+}
+
+.header p {
+  font-size: 20px;
+  font-style: italic;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: #1ee2e7;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #17cfd5;
+}
+
+/* Section Styles */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Services Section */
+.services {
+  background-color: #fff;
+}
+
+.services .card {
+  display: inline-block;
+  width: 250px;
+  margin: 20px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Rooms Section */
+.rooms {
+  background-color: #eef7f8;
+}
+
+.rooms .room-card {
+  display: inline-block;
+  width: 300px;
+  margin: 20px;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.room-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.room-card .info {
+  padding: 15px;
+}
+
+/* Gallery Section */
+.gallery {
+  background-color: #fff;
+}
+
+.gallery .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery img {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background-color: #222;
+  color: #bbb;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+/* Ensure proper spacing for fixed navbar */
+body {
+  padding-top: 56px;
+}
+
+/* Navbar styles */
+.navbar {
+  transition: all 0.3s;
+}
+
+.navbar-shrink {
+  padding: 10px 0;
+  background-color: #222;
+}
+
+/* Carousel styles */
+.carousel-item {
+  height: 100vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  background-size: cover;
+}
+
+/* Intro text styles */
+.intro-text {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
+.intro-lead-in {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+.intro-heading {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 25px;
+}
+/* MainSections.css */
+
+/* Section padding and scroll margin */
+.section-padding {
+  padding: 80px 0;
+  scroll-margin-top: 80px; /* Matches navbar height */
+}
+
+/* Ensures proper spacing when section is target of anchor */
+:target {
+  padding-top: 80px;
+  margin-top: -80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+    scroll-margin-top: 60px;
+  }
+
+  :target {
+    padding-top: 60px;
+    margin-top: -60px;
+  }
+}
+
+/* Smooth transition for all scrollable elements */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fallback for browsers that don't support smooth scrolling */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* BookNow.css */
+.book-now-section {
+  position: relative;
+  background-color: #0d6efd !important; /* Bootstrap primary color */
+}
+
+.btn-reservation {
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.btn-reservation:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* ContactUs.css */
+.contact-section {
+  position: relative;
+}
+
+.contact-info {
+  background-color: #2c3034 !important;
+  transition: transform 0.3s ease;
+}
+
+.contact-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #adb5bd !important;
+}
+/* Footer.css */
+.footer {
+  background-color: #212529 !important;
+}
+
+.footer-heading {
+  font-size: 1.2rem;
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.social-links a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #0d6efd !important;
+  transform: translateY(-3px);
+}
+
+.newsletter .form-control {
+  border-radius: 0;
+  border: none;
+}
+
+.newsletter .btn {
+  border-radius: 0;
+}
+
+.footer a {
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #0d6efd !important;
+}
+
+hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+/* Rooms.css */
+.rooms-section {
+  background-color: #f8f9fa;
+}
+
+.nav-pills .nav-link {
+  color: #495057;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.room-card {
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-5px);
+}
+
+.room-image {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.feature-icon {
+  color: #0d6efd;
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+/* Contact Section Styles */
+.contact-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+}
+
+
+.z-index-1 {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-icon {
+    font-size: 1.2rem;
+}
+
+.divider-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25rem 0;
+}
+
+.divider-custom-line {
+    width: 100%;
+    max-width: 7rem;
+    height: 0.25rem;
+    background-color: #fff;
+    border-radius: 1rem;
+}
+
+.divider-custom-line:first-child {
+    margin-right: 1rem;
+}
+
+.divider-custom-line:last-child {
+    margin-left: 1rem;
+}
+
+.divider-custom-icon {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.form-control {
+    border: 1px solid #495057;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* MainSections.css */
+.btn-reservation {
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-reservation:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-now-section {
+    background: linear-gradient(135deg, #0d6efd 0%, #084298 100%);
+}
+/* Services section styles */
+.service-card {
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-heading {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #0d6efd;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
