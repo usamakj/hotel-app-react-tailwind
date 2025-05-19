@@ -11,10 +11,11 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "homepage": ".",
+    "build": "react-scripts build && echo 'Build complete'",
+    "start": "react-scripts start"
   },
-  "homepage": "./"
+  "homepage": "."
 }
